@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos Essenciais de Texto HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .code-inline {
+            background-color: #e2e8f0; /* slate-200 */
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: 'Fira Code', monospace;
+            color: #1e293b; /* slate-800 */
+            font-size: 0.95em;
+        }
+        .code-block {
+            background-color: #1e293b; /* slate-800 */
+            color: #e2e8f0; /* slate-200 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="http://127.0.0.1:5500/pweb/aulasHTML.html">Início</a>
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-12 md:mb-16 section-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Título da Página e Elementos Essenciais de Texto HTML</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                Aprenda a usar as tags HTML mais comuns para estruturar e formatar o conteúdo textual da sua página web.
+            </p>
+        </section>
+
+        <section id="page-title" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Título da Página: <span class="code-inline">&lt;title&gt;</span></h2>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">Função:</strong> Define o título da página web. Este título <strong class="font-semibold">não é visível</strong> no corpo da página, mas aparece na aba do navegador, na barra de título da janela ou como o nome predefinido quando a página é adicionada aos favoritos. É crucial para a usabilidade e para o SEO (Search Engine Optimization).
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;O Meu Incrível Site&lt;/title&gt; &lt;!-- Este é o título --&gt;
+&lt;/head&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="text-elements" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Elementos de Texto</h2>
+                <p class="text-lg text-slate-600 mb-8">
+                    Estes elementos são a base para organizar e estilizar o texto dentro do corpo da sua página web.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="border-b border-slate-200 pb-8 last:border-b-0">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;h1&gt;</span> a <span class="code-inline">&lt;h6&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            São tags de cabeçalho (ou títulos de secção). <span class="code-inline">&lt;h1&gt;</span> representa o título mais importante da página (geralmente há apenas um por página), enquanto <span class="code-inline">&lt;h6&gt;</span> representa o menos importante. Eles são usados para estruturar o conteúdo e indicar hierarquia, o que é importante para a legibilidade e para os motores de busca.
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">&lt;body&gt;
+    &lt;h1&gt;Título Principal da Página&lt;/h1&gt;
+    &lt;h2&gt;Secção 1&lt;/h2&gt;
+    &lt;h3&gt;Sub-secção 1.1&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-slate-200 pb-8 last:border-b-0">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;p&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            Define um parágrafo de texto. É a tag mais comum para blocos de texto simples numa página web. O navegador adiciona automaticamente algum espaçamento antes e depois de cada parágrafo.
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">&lt;p&gt;Este é um exemplo de um parágrafo de texto.&lt;/p&gt;
+&lt;p&gt;Aqui está outro parágrafo com mais informações.&lt;/p&gt;
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-slate-200 pb-8 last:border-b-0">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;br&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            Cria uma quebra de linha simples. Ao contrário do <span class="code-inline">&lt;p&gt;</span>, que cria um novo parágrafo com espaçamento, o <span class="code-inline">&lt;br&gt;</span> apenas avança para a próxima linha sem adicionar espaçamento extra. É uma tag vazia (não tem tag de fecho).
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">Linha de texto um.&lt;br&gt;
+Linha de texto dois.
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-slate-200 pb-8 last:border-b-0">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;hr&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            Representa uma "linha horizontal" ou uma "mudança temática" no conteúdo. É frequentemente renderizado como uma linha divisória visual, mas o seu propósito semântico é indicar uma separação de conteúdo. É uma tag vazia.
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">&lt;p&gt;Primeiro bloco de conteúdo.&lt;/p&gt;
+&lt;hr&gt; &lt;!-- Insere uma linha divisória --&gt;
+&lt;p&gt;Segundo bloco de conteúdo.&lt;/p&gt;
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-slate-200 pb-8 last:border-b-0">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;strong&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            É uma tag de formatação de texto que indica que o conteúdo dentro dela tem uma <strong class="font-semibold text-blue-600">forte importância</strong> ou relevância. Os navegadores geralmente renderizam o texto em **negrito**, mas o seu significado semântico é mais do que apenas visual.
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">&lt;p&gt;Este é um texto &lt;strong&gt;muito importante&lt;/strong&gt; para ler.&lt;/p&gt;
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4"><span class="code-inline">&lt;em&gt;</span></h3>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                            É uma tag de formatação de texto que indica que o conteúdo dentro dela deve ser <strong class="font-semibold text-blue-600">enfatizado</strong>. Os navegadores geralmente renderizam o texto em *itálico*, mas, tal como <span class="code-inline">&lt;strong&gt;</span>, o seu significado é semântico, indicando ênfase no discurso.
+                        </p>
+                        <div class="code-block">
+                            <pre><code class="language-html">&lt;p&gt;Eu &lt;em&gt;realmente&lt;/em&gt; adoro programar em HTML.&lt;/p&gt;
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="text-center py-12 md:py-16 bg-slate-100 rounded-xl shadow-inner section-fade-in">
+            <div class="max-w-3xl mx-auto px-4">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Dominar estas tags é o primeiro passo para criar conteúdo web bem estruturado e significativo.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade-in');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

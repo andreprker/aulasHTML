@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens na Web: O Elemento &lt;img&gt;</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        .attribute-list {
+            list-style: none;
+            padding: 0;
+        }
+        .attribute-list li {
+            margin-bottom: 10px;
+        }
+        .attribute-list li strong {
+            color: #007bff;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Imagens na Web: O Elemento `&lt;img&gt;`</h1>
+        <p>As imagens são um componente essencial de praticamente qualquer página web, tornando o conteúdo mais visualmente atraente e informativo. Em HTML, o elemento usado para incorporar imagens é o <code>&lt;img&gt;</code>.</p>
+        <p>O elemento <code>&lt;img&gt;</code> é um elemento "vazio" (ou seja, não possui uma tag de fechamento como <code>&lt;/img&gt;</code>) e seus detalhes são definidos através de atributos.</p>
+
+        ---
+
+        <h2>Atributos Essenciais do `&lt;img&gt;`</h2>
+        <p>Para que uma imagem seja exibida corretamente e de forma acessível, é fundamental entender e utilizar seus atributos principais:</p>
+
+        <ul class="attribute-list">
+            <li>
+                <strong><code>src</code> (Source - Fonte):</strong> Este é o atributo mais crucial. Ele especifica o caminho (URL) para o arquivo da imagem. Sem o atributo <code>src</code>, o navegador não saberá qual imagem carregar.
+                <div class="code-example">
+                    <code>&lt;img src="caminho/para/minha-imagem.jpg"&gt;</code>
+                </div>
+            </li>
+            <li>
+                <strong><code>alt</code> (Alternative Text - Texto Alternativo):</strong> Este atributo fornece uma descrição textual da imagem. É extremamente importante por várias razões:
+                <ul>
+                    <li><strong>Acessibilidade:</strong> Leitores de tela para usuários com deficiência visual leem o texto <code>alt</code>, permitindo que eles compreendam o conteúdo da imagem.</li>
+                    <li><strong>SEO (Otimização para Motores de Busca):</strong> Motores de busca usam o texto <code>alt</code> para entender o conteúdo da imagem, o que pode ajudar no ranqueamento.</li>
+                    <li><strong>Fallback:</strong> Se a imagem não puder ser carregada (por um link quebrado, problema de conexão, etc.), o texto <code>alt</code> será exibido em seu lugar.</li>
+                </ul>
+                <div class="code-example">
+                    <code>&lt;img src="por-do-sol.jpg" alt="Um pôr do sol vibrante sobre o oceano com cores quentes no céu"&gt;</code>
+                </div>
+            </li>
+            <li>
+                <strong><code>width</code> (Largura):</strong> Este atributo especifica a largura da imagem em pixels. Definir a largura e a altura pode ajudar o navegador a reservar o espaço necessário para a imagem antes mesmo dela carregar, evitando "saltos" no layout.
+                <div class="code-example">
+                    <code>&lt;img src="logo.png" alt="Logotipo da empresa" width="150"&gt;</code>
+                </div>
+            </li>
+            <li>
+                <strong><code>height</code> (Altura):</strong> Semelhante ao <code>width</code>, este atributo especifica a altura da imagem em pixels. Se você definir apenas um dos atributos (largura ou altura), o navegador ajustará o outro proporcionalmente para manter a proporção original da imagem, a menos que você sobrescreva esse comportamento com CSS.
+                <div class="code-example">
+                    <code>&lt;img src="banner.jpg" alt="Banner promocional" width="800" height="200"&gt;</code>
+                </div>
+            </li>
+        </ul>
+
+        ---
+
+        <h2>Exemplo Completo</h2>
+        <p>Aqui está um exemplo de como você pode usar todos esses atributos juntos:</p>
+        <div class="code-example">
+            <code>
+                &lt;p&gt;Esta é uma imagem de um belo cenário natural:&lt;/p&gt;<br>
+                &lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Valleys_of_Lauterbrunnen.jpg/640px-Valleys_of_Lauterbrunnen.jpg" alt="Vale alpino exuberante com cachoeiras e montanhas ao fundo" width="600" height="400"&gt;
+            </code>
+        </div>
+        <p>E o resultado visualizado:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Valleys_of_Lauterbrunnen.jpg/640px-Valleys_of_Lauterbrunnen.jpg" alt="Vale alpino exuberante com cachoeiras e montanhas ao fundo" width="600" height="400">
+
+        ---
+
+        <h2>Boas Práticas e Considerações</h2>
+        <ul>
+            <li>Sempre inclua o atributo <code>alt</code> para garantir acessibilidade e SEO.</li>
+            <li>Para controle de layout responsivo, é geralmente melhor usar CSS para definir <code>width</code> e <code>height</code> (por exemplo, <code>img { max-width: 100%; height: auto; }</code>) em vez dos atributos HTML, especialmente se você precisar que suas imagens se ajustem a diferentes tamanhos de tela.</li>
+            <li>Use imagens otimizadas para a web (com o tamanho de arquivo menor possível sem perder qualidade) para melhorar o tempo de carregamento da página.</li>
+            <li>Considere usar diferentes formatos de imagem (JPEG para fotos, PNG para gráficos com transparência, SVG para gráficos vetoriais escaláveis).</li>
+        </ul>
+        <p>Dominar o uso do elemento <code>&lt;img&gt;</code> e seus atributos é fundamental para criar páginas web ricas em conteúdo visual e acessíveis.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemento &lt;form&gt; com Atributos action e method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: calc(100% - 22px); /* Considerando padding e borda */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Elemento <code>&lt;form&gt;</code> com Atributos <code>action</code> e <code>method</code></h1>
+        <p>O elemento HTML <strong><code>&lt;form&gt;</code></strong> é essencial para coletar informações do usuário e enviá-las para um servidor web. Ele serve como um contêiner para diversos controles de entrada, como campos de texto, caixas de seleção, botões de rádio e botões de envio. Para que os dados coletados sejam processados, o formulário utiliza dois atributos principais: <strong><code>action</code></strong> e <strong><code>method</code></strong>.</p>
+
+        ---
+
+        <h2>Atributo <code>action</code></h2>
+        <p>O atributo <strong><code>action</code></strong> especifica a URL para onde os dados do formulário serão enviados quando ele for submetido. Esta URL geralmente aponta para um script ou programa no servidor (por exemplo, um arquivo PHP, Python, Node.js, etc.) que será responsável por processar as informações.</p>
+        <p>Se o atributo <code>action</code> for omitido, os dados serão enviados para a URL da página atual.</p>
+        <div class="code-example">
+            <h3>Sintaxe:</h3>
+<pre><code>&lt;form action="url_para_processamento"&gt;
+    &lt;!-- Campos do formulário --&gt;
+&lt;/form&gt;
+</code></pre>
+            <h3>Exemplo:</h3>
+<pre><code>&lt;form action="/processar_cadastro.php"&gt;
+    &lt;!-- ... --&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+        <p>No exemplo, quando o formulário for submetido, os dados serão enviados para o script <code>processar_cadastro.php</code> localizado na raiz do servidor.</p>
+
+        ---
+
+        <h2>Atributo <code>method</code></h2>
+        <p>O atributo <strong><code>method</code></strong> especifica o método HTTP a ser usado ao enviar os dados do formulário. Os dois valores mais comuns para este atributo são <strong><code>GET</code></strong> e <strong><code>POST</code></strong>.</p>
+
+        <h3>Método <code>GET</code></h3>
+        <ul>
+            <li>Os dados do formulário são anexados à URL como pares nome/valor (query string) e enviados.</li>
+            <li>Os dados são visíveis na barra de endereço do navegador.</li>
+            <li>Existe um limite no tamanho dos dados que podem ser enviados.</li>
+            <li>É adequado para envios de dados que não alteram o estado do servidor (ex: buscas, filtragens).</li>
+            <li>Os dados podem ser marcados como favoritos e compartilhados.</li>
+        </ul>
+        <div class="code-example">
+            <h3>Sintaxe e Exemplo:</h3>
+<pre><code>&lt;form action="/buscar.php" method="GET"&gt;
+    &lt;label for="termo"&gt;Termo de Busca:&lt;/label&gt;
+    &lt;input type="text" id="termo" name="q"&gt;
+    &lt;button type="submit"&gt;Buscar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+        <p>Ao submeter o formulário acima com "HTML" no campo de busca, a URL ficaria algo como: <code>/buscar.php?q=HTML</code>.</p>
+
+        <h3>Método <code>POST</code></h3>
+        <ul>
+            <li>Os dados do formulário são enviados no corpo da requisição HTTP.</li>
+            <li>Os dados não são visíveis na URL, tornando-o mais seguro para informações sensíveis (senhas, dados pessoais).</li>
+            <li>Não há um limite prático para o tamanho dos dados que podem ser enviados.</li>
+            <li>É adequado para envios de dados que alteram o estado do servidor (ex: cadastro, login, envio de arquivos).</li>
+            <li>Não é possível marcar a URL como favorita com os dados do formulário.</li>
+        </ul>
+        <div class="code-example">
+            <h3>Sintaxe e Exemplo:</h3>
+<pre><code>&lt;form action="/salvar_usuario.php" method="POST"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome_usuario"&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email_usuario"&gt;
+    &lt;button type="submit"&gt;Cadastrar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+        <p>Ao submeter o formulário acima, os dados serão enviados no corpo da requisição para <code>/salvar_usuario.php</code>, sem serem visíveis na URL.</p>
+
+        ---
+
+        <h2>Exemplo Completo de Formulário com <code>action</code> e <code>method</code></h2>
+        <p>Aqui está um formulário de contato simples que demonstra o uso de ambos os atributos:</p>
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Formulário de Contato&lt;/h2&gt;
+&lt;form action="/enviar_mensagem.php" method="POST"&gt;
+    &lt;label for="nome_completo"&gt;Nome Completo:&lt;/label&gt;
+    &lt;input type="text" id="nome_completo" name="nome" required&gt;
+
+    &lt;label for="email_contato"&gt;Seu Email:&lt;/label&gt;
+    &lt;input type="email" id="email_contato" name="email" required&gt;
+
+    &lt;label for="mensagem_contato"&gt;Mensagem:&lt;/label&gt;
+    &lt;textarea id="mensagem_contato" name="mensagem" rows="5" required&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Enviar Mensagem&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Formulário de Contato</h2>
+        <form action="/enviar_mensagem.php" method="POST">
+            <label for="nome_completo">Nome Completo:</label>
+            <input type="text" id="nome_completo" name="nome" required>
+
+            <label for="email_contato">Seu Email:</label>
+            <input type="email" id="email_contato" name="email" required>
+
+            <label for="mensagem_contato">Mensagem:</label>
+            <textarea id="mensagem_contato" name="mensagem" rows="5" required></textarea>
+
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>Os atributos <strong><code>action</code></strong> e <strong><code>method</code></strong> do elemento <code>&lt;form&gt;</code> são cruciais para definir como e para onde os dados do usuário serão enviados. A escolha entre os métodos <code>GET</code> e <code>POST</code> depende da natureza dos dados e da operação que será realizada no servidor. Compreender o funcionamento desses atributos é fundamental para criar formulários web eficientes e seguros.</p>
+    </div>
+</body>
+</html>

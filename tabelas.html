@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas em HTML: &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Para remover o espaçamento entre as bordas das células */
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        thead {
+            background-color: #e0e0e0;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabelas em HTML: Estrutura e Elementos Principais</h1>
+        <p>As tabelas HTML são usadas para exibir dados tabulares, ou seja, informações organizadas em linhas e colunas. Elas são ideais para apresentar conjuntos de dados, como listas de produtos, resultados de estatísticas, horários, entre outros. Para construir uma tabela bem estruturada e semanticamente correta, diversos elementos HTML são utilizados em conjunto.</p>
+
+        ---
+
+        <h2>Elementos Essenciais de uma Tabela</h2>
+        <p>Uma tabela HTML é construída usando uma combinação de tags que definem sua estrutura, cabeçalhos, corpo e células de dados.</p>
+
+        <h3><code>&lt;table&gt;</code>: O Contêiner da Tabela</h3>
+        <p>O elemento <code>&lt;table&gt;</code> é o principal contêiner que envolve todo o conteúdo da tabela. Tudo o que pertence à tabela deve estar dentro desta tag.</p>
+        <div class="code-example">
+<pre><code>&lt;table&gt;
+    &lt;!-- Conteúdo da tabela aqui --&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+
+        <h3><code>&lt;thead&gt;</code>: O Cabeçalho da Tabela</h3>
+        <p>O elemento <code>&lt;thead&gt;</code> é usado para agrupar o conteúdo do cabeçalho da tabela. Ele é útil para distinguir os cabeçalhos das colunas do corpo da tabela e para fins de acessibilidade e estilização.</p>
+        <div class="code-example">
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;!-- Linhas de cabeçalho aqui --&gt;
+    &lt;/thead&gt;
+    &lt;!-- ... corpo da tabela ... --&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+
+        <h3><code>&lt;tbody&gt;</code>: O Corpo da Tabela</h3>
+        <p>O elemento <code>&lt;tbody&gt;</code> é usado para agrupar o conteúdo das linhas de dados da tabela. É o local onde a maioria das informações da tabela reside. Você pode ter apenas um <code>&lt;tbody&gt;</code> por tabela, mas ele é essencial para a estrutura semântica.</p>
+        <div class="code-example">
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;!-- ... cabeçalho ... --&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;!-- Linhas de dados aqui --&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+
+        <h3><code>&lt;tr&gt;</code>: Linha da Tabela (Table Row)</h3>
+        <p>O elemento <code>&lt;tr&gt;</code> define uma linha dentro da tabela. Cada linha é composta por células de cabeçalho (<code>&lt;th&gt;</code>) ou células de dados (<code>&lt;td&gt;</code>).</p>
+        <div class="code-example">
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;!-- Células aqui --&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+
+        <h3><code>&lt;th&gt;</code>: Célula de Cabeçalho (Table Header)</h3>
+        <p>O elemento <code>&lt;th&gt;</code> define uma célula de cabeçalho em uma tabela. O texto dentro de <code>&lt;th&gt;</code> é tipicamente formatado em negrito e centralizado por padrão pelos navegadores. Elas fornecem o significado das colunas ou linhas.</p>
+        <div class="code-example">
+<pre><code>&lt;tr&gt;
+    &lt;th&gt;Nome&lt;/th&gt;
+    &lt;th&gt;Idade&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+        </div>
+
+        <h3><code>&lt;td&gt;</code>: Célula de Dados (Table Data)</h3>
+        <p>O elemento <code>&lt;td&gt;</code> define uma célula de dados padrão em uma tabela. É onde o conteúdo real da tabela é inserido.</p>
+        <div class="code-example">
+<pre><code>&lt;tr&gt;
+    &lt;td&gt;João&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>Exemplo Completo de Tabela HTML</h2>
+        <p>Aqui está um exemplo que combina todos esses elementos para criar uma tabela de produtos simples:</p>
+
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Estoque de Produtos&lt;/h2&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ID do Produto&lt;/th&gt;
+            &lt;th&gt;Nome do Produto&lt;/th&gt;
+            &lt;th&gt;Preço (R$)&lt;/th&gt;
+            &lt;th&gt;Quantidade em Estoque&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;001&lt;/td&gt;
+            &lt;td&gt;Teclado Mecânico&lt;/td&gt;
+            &lt;td&gt;250.00&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;002&lt;/td&gt;
+            &lt;td&gt;Mouse Óptico&lt;/td&gt;
+            &lt;td&gt;80.50&lt;/td&gt;
+            &lt;td&gt;120&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;003&lt;/td&gt;
+            &lt;td&gt;Monitor LED 24"&lt;/td&gt;
+            &lt;td&gt;799.90&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;004&lt;/td&gt;
+            &lt;td&gt;Webcam HD&lt;/td&gt;
+            &lt;td&gt;150.00&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Estoque de Produtos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID do Produto</th>
+                    <th>Nome do Produto</th>
+                    <th>Preço (R$)</th>
+                    <th>Quantidade em Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Teclado Mecânico</td>
+                    <td>250.00</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Mouse Óptico</td>
+                    <td>80.50</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Monitor LED 24"</td>
+                    <td>799.90</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Webcam HD</td>
+                    <td>150.00</td>
+                    <td>85</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Considerações Importantes</h2>
+        <ul>
+            <li><strong>Semântica:</strong> Usar <code>&lt;thead&gt;</code> e <code>&lt;tbody&gt;</code> não é apenas para estilização, mas também fornece significado semântico à tabela, o que é importante para acessibilidade e motores de busca.</li>
+            <li><strong>Estilo com CSS:</strong> Para tornar as tabelas visualmente atraentes e responsivas, você geralmente precisará aplicar estilos CSS (como bordas, preenchimento, cores de fundo alternadas para linhas, etc.). O exemplo acima já inclui um CSS básico para melhorar a visualização.</li>
+            <li><strong>Acessibilidade:</strong> Para tabelas complexas, considere usar atributos como <code>scope</code> em <code>&lt;th&gt;</code> (<code>scope="col"</code> ou <code>scope="row"</code>) e <code>&lt;caption&gt;</code> para fornecer um título à tabela, o que melhora a experiência para usuários de leitores de tela.</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>Dominar os elementos <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> e <code>&lt;td&gt;</code> é essencial para qualquer desenvolvedor web. Eles permitem organizar e apresentar dados de forma clara e estruturada, tornando suas páginas mais informativas e acessíveis.</p>
+    </div>
+</body>
+</html>

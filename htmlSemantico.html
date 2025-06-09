@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Semântico: header, nav, main, article, section, aside, footer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* Estilos para o exemplo completo de layout */
+        header, nav, main, article, section, aside, footer {
+            border: 1px dashed #999;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fcfcfc;
+        }
+        header {
+            background-color: #cceeff;
+            text-align: center;
+        }
+        nav {
+            background-color: #e6ffe6;
+        }
+        main {
+            background-color: #fff9e6;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        main > article {
+            flex: 2; /* Ocupa mais espaço */
+            min-width: 300px;
+            background-color: #ffe6e6;
+        }
+        main > aside {
+            flex: 1; /* Ocupa menos espaço */
+            min-width: 200px;
+            background-color: #e6e6ff;
+        }
+        footer {
+            background-color: #cceeff;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Semântico: Estruturando a Web com Significado</h1>
+        <p>O <strong>HTML Semântico</strong> refere-se ao uso de tags HTML de forma a reforçar o significado das informações contidas nessas tags, e não apenas sua apresentação visual. Ao utilizar elementos semânticos, você não está apenas dizendo ao navegador <em>como</em> exibir o conteúdo, mas também <em>o que</em> esse conteúdo significa. Isso é fundamental para a acessibilidade, SEO (Search Engine Optimization) e para a manutenibilidade do código.</p>
+        <p>Abaixo, exploraremos alguns dos elementos semânticos mais comuns e importantes na construção de páginas web modernas.</p>
+
+        ---
+
+        <h2><code>&lt;header&gt;</code>: Introdução ou Grupo de Ajuda Navegacional</h2>
+        <p>O elemento <code>&lt;header&gt;</code> representa um grupo de conteúdo introdutório ou de auxílio à navegação. Ele geralmente contém o título de uma seção ou do documento, um logotipo, um campo de busca e/ou elementos de navegação (como um <code>&lt;nav&gt;</code>).</p>
+        <p>Uma página pode ter múltiplos <code>&lt;header&gt;</code>, por exemplo, um para o site inteiro e outro para uma seção específica (como um <code>&lt;article&gt;</code>).</p>
+        <div class="code-example">
+<pre><code>&lt;header&gt;
+    &lt;h1&gt;Meu Blog de Tecnologia&lt;/h1&gt;
+    &lt;p&gt;As últimas notícias do mundo tech.&lt;/p&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/"&gt;Início&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;nav&gt;</code>: Bloco de Navegação</h2>
+        <p>O elemento <code>&lt;nav&gt;</code> representa uma seção de links de navegação. Ele deve ser usado para os principais blocos de navegação do site, como o menu principal, links para seções importantes ou tabelas de conteúdo.</p>
+        <p>Não é necessário usar um <code>&lt;nav&gt;</code> para cada grupo de links; apenas para blocos de navegação significativos.</p>
+        <div class="code-example">
+<pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#servicos"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;main&gt;</code>: Conteúdo Principal</h2>
+        <p>O elemento <code>&lt;main&gt;</code> representa o conteúdo dominante do <code>&lt;body&gt;</code> do documento. Ele inclui o conteúdo que é única para aquele documento e exclui o conteúdo que se repete em vários documentos (como cabeçalhos de site, navegação, rodapés, barras laterais, etc.).</p>
+        <p>Deve haver apenas um elemento <code>&lt;main&gt;</code> por documento.</p>
+        <div class="code-example">
+<pre><code>&lt;main&gt;
+    &lt;h2&gt;Bem-vindo ao Nosso Site!&lt;/h2&gt;
+    &lt;p&gt;Aqui você encontrará informações sobre nossos produtos e serviços.&lt;/p&gt;
+&lt;/main&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;article&gt;</code>: Conteúdo Autônomo e Completo</h2>
+        <p>O elemento <code>&lt;article&gt;</code> representa um conteúdo independente e auto-contido. Isso significa que ele poderia ser distribuído ou reutilizado independentemente do resto da página. Exemplos comuns incluem posts de blog, artigos de notícias, comentários de usuários, widgets interativos ou qualquer item de conteúdo que faça sentido por si só.</p>
+        <div class="code-example">
+<pre><code>&lt;article&gt;
+    &lt;h2&gt;O Futuro da Inteligência Artificial&lt;/h2&gt;
+    &lt;p&gt;Por João Silva &mdash; 08 de Junho de 2025&lt;/p&gt;
+    &lt;p&gt;A inteligência artificial continua a moldar nosso mundo...&lt;/p&gt;
+    &lt;section&gt;
+        &lt;h3&gt;Comentários&lt;/h3&gt;
+        &lt;p&gt;"Ótimo artigo!" - Maria&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;section&gt;</code>: Seção Genérica de Conteúdo</h2>
+        <p>O elemento <code>&lt;section&gt;</code> representa uma seção genérica de conteúdo em um documento, geralmente com um título. Use <code>&lt;section&gt;</code> quando você tem um grupo de conteúdo que tem uma temática comum, mas não se qualifica como um <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code> ou <code>&lt;aside&gt;</code>.</p>
+        <div class="code-example">
+<pre><code>&lt;section&gt;
+    &lt;h2&gt;Nossos Serviços&lt;/h2&gt;
+    &lt;p&gt;Oferecemos uma variedade de serviços de desenvolvimento web...&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Desenvolvimento Front-end&lt;/li&gt;
+        &lt;li&gt;Desenvolvimento Back-end&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;aside&gt;</code>: Conteúdo Lateral ou Relacionado</h2>
+        <p>O elemento <code>&lt;aside&gt;</code> representa uma seção de uma página que contém conteúdo tangencialmente relacionado ao conteúdo principal da página. Isso pode incluir barras laterais, blocos de citação, publicidade, grupos de links relacionados, etc.</p>
+        <div class="code-example">
+<pre><code>&lt;aside&gt;
+    &lt;h3&gt;Artigos Populares&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;10 Dicas de CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Introdução ao JavaScript&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2><code>&lt;footer&gt;</code>: Rodapé de Seção ou Documento</h2>
+        <p>O elemento <code>&lt;footer&gt;</code> representa o rodapé da seção ou documento mais próximo. Ele geralmente contém informações sobre o autor, links para documentos relacionados, informações de direitos autorais ou navegação secundária.</p>
+        <p>Assim como o <code>&lt;header&gt;</code>, um <code>&lt;footer&gt;</code> pode ser usado para o documento inteiro ou para seções específicas (como um <code>&lt;article&gt;</code>).</p>
+        <div class="code-example">
+<pre><code>&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Meu Site. Todos os direitos reservados.&lt;/p&gt;
+    &lt;p&gt;&lt;a href="/privacidade"&gt;Política de Privacidade&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>Exemplo Completo de Layout Semântico</h2>
+        <p>Veja como esses elementos podem ser combinados para estruturar uma página web típica:</p>
+        <div class="code-example">
+<pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Logo do Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Página Inicial&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Portfólio&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Título do Artigo Principal&lt;/h2&gt;
+            &lt;p&gt;Este é o conteúdo principal do artigo. Ele é independente e completo.&lt;/p&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Sub-seção 1 do Artigo&lt;/h3&gt;
+                &lt;p&gt;Detalhes adicionais sobre o tópico do artigo.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Sub-seção 2 do Artigo&lt;/h3&gt;
+                &lt;p&gt;Mais informações e exemplos.&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+
+        &lt;aside&gt;
+            &lt;h3&gt;Conteúdo Relacionado&lt;/h3&gt;
+            &lt;p&gt;Links para outros artigos relevantes, anúncios ou informações secundárias.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Link Rápido 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Link Rápido 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Direitos Autorais &amp;copy; 2025. Todos os direitos reservados.&lt;/p&gt;
+        &lt;p&gt;&lt;a href="#"&gt;Termos de Uso&lt;/a&gt; | &lt;a href="#"&gt;Fale Conosco&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização do Layout Semântico:</h3>
+        <header>
+            <h1>Logo do Site</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Página Inicial</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <h2>Título do Artigo Principal</h2>
+                <p>Este é o conteúdo principal do artigo. Ele é independente e completo.</p>
+                <section>
+                    <h3>Sub-seção 1 do Artigo</h3>
+                    <p>Detalhes adicionais sobre o tópico do artigo.</p>
+                </section>
+                <section>
+                    <h3>Sub-seção 2 do Artigo</h3>
+                    <p>Mais informações e exemplos.</p>
+                </section>
+            </article>
+
+            <aside>
+                <h3>Conteúdo Relacionado</h3>
+                <p>Links para outros artigos relevantes, anúncios ou informações secundárias.</p>
+                <ul>
+                    <li><a href="#">Link Rápido 1</a></li>
+                    <li><a href="#">Link Rápido 2</a></li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Direitos Autorais &copy; 2025. Todos os direitos reservados.</p>
+            <p><a href="#">Termos de Uso</a> | <a href="#">Fale Conosco</a></p>
+        </footer>
+
+        ---
+
+        <h2>Benefícios do HTML Semântico</h2>
+        <ul>
+            <li><strong>Acessibilidade:</strong> Ajuda leitores de tela e outras tecnologias assistivas a entenderem a estrutura e o significado do conteúdo, tornando a web mais inclusiva.</li>
+            <li><strong>SEO:</strong> Motores de busca podem interpretar o conteúdo da página com mais precisão, o que pode levar a um melhor ranqueamento.</li>
+            <li><strong>Manutenibilidade:</strong> O código se torna mais legível e fácil de manter por outros desenvolvedores.</li>
+            <li><strong>Desenvolvimento:</strong> Facilita a aplicação de estilos CSS e a manipulação com JavaScript, pois os elementos têm um propósito claro.</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>A adoção do HTML semântico é uma prática fundamental no desenvolvimento web moderno. Ao utilizar os elementos corretos para o propósito correto (como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code> e <code>&lt;footer&gt;</code>), você cria páginas web mais significativas, acessíveis, otimizadas para motores de busca e fáceis de gerenciar.</p>
+    </div>
+</body>
+</html>

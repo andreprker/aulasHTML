@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Essencial do HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .code-inline {
+            background-color: #e2e8f0; /* slate-200 */
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: 'Fira Code', monospace;
+            color: #1e293b; /* slate-800 */
+            font-size: 0.95em;
+        }
+        .code-block {
+            background-color: #1e293b; /* slate-800 */
+            color: #e2e8f0; /* slate-200 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="http://127.0.0.1:5500/pweb/aulasHTML.html">Início</a>
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-12 md:mb-16 section-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Estrutura Essencial do HTML</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                Descubra os elementos fundamentais que compõem cada documento HTML e a sua função na web.
+            </p>
+        </section>
+
+        <section id="doctype" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;!DOCTYPE html&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    Esta é a primeira linha de qualquer documento HTML moderno.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> Não é uma tag HTML, mas uma <strong class="font-semibold text-blue-600">"declaração de tipo de documento"</strong>.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> Informa ao navegador qual versão do HTML está a ser utilizada. <span class="code-inline">&lt;!DOCTYPE html&gt;</span> especifica que o documento é um HTML5, a versão mais recente e padrão. Isso garante que o navegador renderize a página no "modo padrão", evitando comportamentos inesperados do "modo quirks" (modo de compatibilidade para navegadores mais antigos).
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;!-- Restante do código HTML --&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="html-tag" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;html&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    O elemento raiz que encapsula todo o conteúdo HTML de uma página.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> A tag raiz de todo documento HTML.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> É o elemento que engloba todo o conteúdo da página web, exceto a declaração <span class="code-inline">&lt;!DOCTYPE html&gt;</span>. Tudo o que faz parte da página HTML deve estar dentro desta tag. O atributo <span class="code-inline">lang="pt-BR"</span> (ou outro código de idioma) dentro da tag <span class="code-inline">&lt;html&gt;</span> é importante para acessibilidade e SEO, indicando o idioma principal do conteúdo.
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+    &lt;head&gt;
+        &lt;!-- Metadados --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Conteúdo visível --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="head-tag" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;head&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    A secção de cabeçalho, que contém metadados sobre a página.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> A secção de cabeçalho do documento HTML.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> Contém metadados sobre a página web que não são visíveis diretamente no corpo da página. Isso inclui:
+                        <ul class="list-disc list-inside ml-6 mt-2 text-base">
+                            <li><span class="code-inline">&lt;meta charset="UTF-8"&gt;</span>: Define a codificação de caracteres, garantindo que os textos sejam exibidos corretamente (incluindo acentos e caracteres especiais).</li>
+                            <li><span class="code-inline">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>: Essencial para a responsividade, ajustando a visualização da página em diferentes dispositivos.</li>
+                            <li><span class="code-inline">&lt;title&gt;</span>: Define o título da página que aparece na aba do navegador.</li>
+                            <li><span class="code-inline">&lt;link&gt;</span>: Para ligar a folhas de estilo CSS externas.</li>
+                            <li><span class="code-inline">&lt;script&gt;</span>: Para incluir ficheiros JavaScript ou código JavaScript interno.</li>
+                            <li>Outras tags <span class="code-inline">&lt;meta&gt;</span> para descrição, palavras-chave, etc.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Minha Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="estilos.css"&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="body-tag" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;body&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    A secção que contém todo o conteúdo visível da página web.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> A secção do corpo do documento HTML.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> Contém todo o conteúdo visível da página web. Tudo o que o utilizador vê no navegador (textos, imagens, links, vídeos, tabelas, formulários, etc.) é colocado dentro desta tag.
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;body&gt;
+    &lt;h1&gt;Bem-vindo à Minha Página&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de texto.&lt;/p&gt;
+    &lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
+    &lt;a href="outra-pagina.html"&gt;Ir para outra página&lt;/a&gt;
+&lt;/body&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="text-center py-12 md:py-16 bg-slate-100 rounded-xl shadow-inner section-fade-in">
+            <div class="max-w-3xl mx-auto px-4">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Esses quatro elementos formam a estrutura básica e essencial que todo documento HTML deve ter para ser válido e bem interpretado pelos navegadores, sendo a base para a construção de qualquer página web.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade-in');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas Não Ordenadas: &lt;ul&gt; e &lt;li&gt; em HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc; /* Padrão para <ul>, mas pode ser mudado com CSS */
+            padding-left: 20px;
+        }
+        ul.custom-style {
+            list-style-type: square; /* Exemplo de estilo com CSS */
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-placeholder {
+            background-color: #ccc;
+            color: #666;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listas Não Ordenadas: <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code> em HTML</h1>
+        <p>As listas são elementos HTML essenciais para organizar o conteúdo de forma clara e legível. Existem dois tipos principais de listas: ordenadas (<code>&lt;ol&gt;</code>) e não ordenadas (<code>&lt;ul&gt;</code>). Esta página focará nas <strong>listas não ordenadas</strong>, que são usadas para agrupar itens relacionados onde a ordem não é semanticamente importante.</p>
+
+        ---
+
+        <h2>O Elemento <code>&lt;ul&gt;</code> (Unordered List)</h2>
+        <p>O elemento <code>&lt;ul&gt;</code> representa uma lista de itens em que a ordem dos itens não tem significado. Por padrão, os navegadores exibirão os itens de uma lista não ordenada com marcadores (geralmente círculos sólidos ou discos).</p>
+        <p>A tag de abertura <code>&lt;ul&gt;</code> e a tag de fechamento <code>&lt;/ul&gt;</code> delimitam toda a lista.</p>
+
+        <div class="code-example">
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Item da lista 1&lt;/li&gt;
+    &lt;li&gt;Item da lista 2&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>O Elemento <code>&lt;li&gt;</code> (List Item)</h2>
+        <p>O elemento <code>&lt;li&gt;</code> representa um item individual dentro de uma lista (ordenada <code>&lt;ol&gt;</code> ou não ordenada <code>&lt;ul&gt;</code>). Cada item que você deseja incluir na sua lista deve ser envolvido por uma tag <code>&lt;li&gt;</code> de abertura e uma tag <code>&lt;/li&gt;</code> de fechamento.</p>
+        <p>É importante notar que o elemento <code>&lt;li&gt;</code> deve ser um filho direto de um <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.</p>
+
+        ---
+
+        <h2>Exemplo Prático de Lista Não Ordenada</h2>
+        <p>Vamos criar uma lista simples de compras para ilustrar o uso de <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>:</p>
+
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Minha Lista de Compras&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Pão&lt;/li&gt;
+    &lt;li&gt;Leite&lt;/li&gt;
+    &lt;li&gt;Ovos&lt;/li&gt;
+    &lt;li&gt;Frutas&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Minha Lista de Compras</h2>
+        <ul>
+            <li>Pão</li>
+            <li>Leite</li>
+            <li>Ovos</li>
+            <li>Frutas</li>
+        </ul>
+
+        ---
+
+        <h2>Estilizando Listas com CSS</h2>
+        <p>Embora as listas não ordenadas venham com um estilo padrão (marcadores), você pode alterar a aparência desses marcadores usando CSS. A propriedade <code>list-style-type</code> é comumente usada para isso.</p>
+
+        <div class="code-example">
+            <h3>Exemplo de Estilização CSS:</h3>
+<pre><code>&lt;h2&gt;Tarefas do Dia (Estilo Personalizado)&lt;/h2&gt;
+&lt;ul class="custom-style"&gt;
+    &lt;li&gt;Estudar HTML&lt;/li&gt;
+    &lt;li&gt;Fazer exercícios&lt;/li&gt;
+    &lt;li&gt;Caminhar com o cachorro&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- No CSS (dentro da tag &lt;style&gt; ou em um arquivo .css): --&gt;
+&lt;style&gt;
+    .custom-style {
+        list-style-type: square; /* Marcadores quadrados */
+        color: #663399; /* Cor do texto e dos marcadores */
+    }
+&lt;/style&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização (com o CSS acima aplicado):</h3>
+        <h2>Tarefas do Dia (Estilo Personalizado)</h2>
+        <ul class="custom-style">
+            <li>Estudar HTML</li>
+            <li>Fazer exercícios</li>
+            <li>Caminhar com o cachorro</li>
+        </ul>
+
+        ---
+
+        <h2>Listas Aninhadas</h2>
+        <p>Você pode aninhar listas, o que significa colocar uma lista dentro de outra. Isso é útil para criar estruturas hierárquicas de informações.</p>
+
+        <div class="code-example">
+            <h3>Exemplo de Lista Aninhada:</h3>
+<pre><code>&lt;h2&gt;Menu de Comida&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Entradas
+        &lt;ul&gt;
+            &lt;li&gt;Pão de alho&lt;/li&gt;
+            &lt;li&gt;Salada Ceasar&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Pratos Principais
+        &lt;ul&gt;
+            &lt;li&gt;Macarrão com frutos do mar&lt;/li&gt;
+            &lt;li&gt;Bife à parmegiana&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Sobremesas
+        &lt;ul&gt;
+            &lt;li&gt;Pudim&lt;/li&gt;
+            &lt;li&gt;Bolo de chocolate&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Menu de Comida</h2>
+        <ul>
+            <li>Entradas
+                <ul>
+                    <li>Pão de alho</li>
+                    <li>Salada Ceasar</li>
+                </ul>
+            </li>
+            <li>Pratos Principais
+                <ul>
+                    <li>Macarrão com frutos do mar</li>
+                    <li>Bife à parmegiana</li>
+                </ul>
+            </li>
+            <li>Sobremesas
+                <ul>
+                    <li>Pudim</li>
+                    <li>Bolo de chocolate</li>
+                </ul>
+            </li>
+        </ul>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>O uso dos elementos <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code> é fundamental para estruturar conteúdo não sequencial em suas páginas web. Eles não apenas melhoram a legibilidade para os usuários, mas também fornecem significado semântico para motores de busca e tecnologias assistivas. Com um pouco de CSS, você pode personalizá-los para se adequarem perfeitamente ao design do seu site.</p>
+    </div>
+</body>
+</html>

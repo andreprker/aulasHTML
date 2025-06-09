@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos de Aula Interativos de HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .lesson-content {
+            display: none;
+        }
+        .lesson-content.active {
+            display: block;
+        }
+        .nav-link.active {
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+        a{
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-white border-r border-slate-200 p-6 hidden md:block">
+            <h1 class="text-xl font-bold text-slate-900 mb-8">Planos de Aula HTML</h1>
+            <nav id="desktop-nav">
+                <ul class="space-y-2">
+                    <li><button data-target="lesson-1" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 1</button></li>
+                    <li><button data-target="lesson-2" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 2</button></li>
+                    <li><button data-target="lesson-3" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 3</button></li>
+                    <li><button data-target="lesson-4" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 4</button></li>
+                    <li><button data-target="lesson-5" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 5</button></li>
+                    <li><button data-target="lesson-6" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 6</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10">
+            <div class="md:hidden mb-6">
+                <label for="mobile-nav-select" class="sr-only">Selecionar Aula</label>
+                <select id="mobile-nav-select" class="w-full p-3 border border-slate-300 rounded-lg bg-white shadow-sm">
+                    <option value="lesson-1">Aula 1: Fundamentos</option>
+                    <option value="lesson-2">Aula 2: Links e Imagens</option>
+                    <option value="lesson-3">Aula 3: Listas e Tabelas</option>
+                    <option value="lesson-4">Aula 4: Formulários</option>
+                    <option value="lesson-5">Aula 5: Semântica e Mídia</option>
+                    <option value="lesson-6">Aula 6: Boas Práticas</option>
+                </select>
+            </div>
+            
+            <header class="mb-10">
+                 <h2 class="text-4xl font-bold text-slate-900">Guia Interativo de Ensino de HTML</h2>
+                 <p class="text-lg text-slate-600 mt-2">Navegue pelos planos de aula para explorar um currículo prático de desenvolvimento web com HTML. Cada seção oferece objetivos, conteúdo e atividades para uma aula completa.</p>
+            </header>
+
+            <div id="lesson-1" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 1: Fundamentos do HTML - Estrutura e Conteúdo Básico</h3>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Introduzir a estrutura básica de um documento HTML e os elementos essenciais para criar conteúdo textual.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores com editor de texto e navegador web.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="oQueEHTML.html">Introdução ao HTML: O que é e sua função na web.</a></li>
+                        <li><a href="estruturaBasica.html">Estrutura Essencial: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</a> </li>
+                        <li><a href="tagsMeta.html">Meta Tags: <code>&lt;meta charset="UTF-8"&gt;</code>, <code>&lt;meta name="viewport" ...&gt;</code>.</a></li>
+                        <li><a href="elementosBasicos.html">Título e elementos de texto: <code>&lt;title&gt;</code>,<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Minha Primeira Página Pessoal</h4>
+                    <p class="mb-4">Os alunos deverão criar um arquivo <code>index.html</code> com os seguintes requisitos:</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Título da página: "Meu Perfil Online".</li>
+                        <li>Um <code>&lt;h1&gt;</code> com o nome completo do aluno.</li>
+                        <li>Um <code>&lt;p&gt;</code> com uma breve biografia, utilizando <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code> para destacar palavras.</li>
+                        <li>Um <code>&lt;h2&gt;</code> para "Meus Hobbies".</li>
+                        <li>Uma lista de 3 hobbies, cada um em um <code>&lt;p&gt;</code> separado.</li>
+                        <li>Um <code>&lt;hr&gt;</code> para separar seções.</li>
+                        <li>Um <code>&lt;h3&gt;</code> para "Contato" com um parágrafo contendo um e-mail.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="lesson-2" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 2: Links e Imagens - Navegação e Conteúdo Visual</h3>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Capacitar os alunos a criar links para navegação e a inserir imagens em suas páginas web.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores com editor de texto, navegador web, e algumas imagens de exemplo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="tagLink.html">Links (Hyperlinks): Elemento <code>&lt;a&gt;</code>, com atributos <code>href</code> e <code>target="_blank"</code>.</a></li>
+                        <li><a href="tagImg.html">Imagens: Elemento <code>&lt;img&gt;</code>, com atributos <code>src</code>, <code>alt</code>, <code>width</code> e <code>height</code>.</a></li>
+                        <li><a href="caminhosRelativoAbsoluto.html">Relativos vs. Absolutos.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Criando um Álbum de Fotos com Navegação</h4>
+                    <p class="mb-4">Criar uma pasta de projeto com <code>index.html</code>, <code>galeria.html</code>, e uma subpasta <code>/imagens</code>.</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><b>index.html:</b> Deve ter um título, uma introdução e um link para a página <code>galeria.html</code>.</li>
+                        <li><b>galeria.html:</b> Deve exibir três imagens diferentes da pasta <code>/imagens</code>, cada uma com texto alternativo.</li>
+                        <li><b>Navegação:</b> A página da galeria deve ter um link para retornar à página inicial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="lesson-3" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 3: Listas e Tabelas - Organizando Informações</h3>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Ensinar a estruturar informações de forma organizada usando listas e tabelas HTML.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores com editor de texto e navegador web.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="listasDesordenadas.html">Listas não ordenadas: <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>.</a></li>
+                        <li><a href="listasOrdenadas.html">Listas ordenadas: <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code>.</a></li>
+                        <li><a href="listasAninhadas.html">Listas aninhadas.</a></li>
+                        <li><a href="tabelas.html">Tabelas: <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>.</a></li>
+                        <li><a href="mesclagemTabelas.html">Mesclagem de Células: <code>colspan</code> e <code>rowspan</code>.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Currículo Simplificado e Horário de Aulas</h4>
+                    <p class="mb-4">Criar um arquivo <code>curriculo.html</code>.</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><b>Seção de Habilidades:</b> Usar listas aninhadas (<code>&lt;ul&gt;</code> e <code>&lt;ol&gt;</code>) para listar habilidades técnicas e comportamentais.</li>
+                        <li><b>Seção de Horário:</b> Usar uma <code>&lt;table&gt;</code> para criar um horário de aulas semanal.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="lesson-4" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 4: Formulários - Coletando Dados do Usuário</h3>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Ensinar a criar formulários HTML para coletar diferentes tipos de dados dos usuários.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores com editor de texto e navegador web.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="formularios.html">Elemento <code>&lt;form&gt;</code> com atributos <code>action</code> e <code>method</code>.</a></li>
+                        <li><a href="inputsFormulario.html">Inputs variados: <code>text</code>, <code>password</code>, <code>email</code>, <code>number</code>, <code>date</code>, <code>checkbox</code>, <code>radio</code>, <code>submit</code>, <code>reset</code>.</a></li>
+                        <li><a href="outrosElementosForm.html">Outros elementos: <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;button&gt;</code>.</a></li>
+                        <li><a href="atribImportantesFrm.html">Atributos importantes: <code>name</code>, <code>id</code>, <code>placeholder</code>, <code>value</code>, <code>required</code>.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Formulário de Contato ou Cadastro</h4>
+                    <p class="mb-4">Criar um arquivo <code>contato.html</code> com um formulário que colete nome, e-mail, mensagem, assunto (radio), interesses (checkbox) e um país (select).</p>
+                    <p>Garantir que todos os campos tenham um <code>&lt;label&gt;</code> associado para acessibilidade.</p>
+                </div>
+            </div>
+
+            <div id="lesson-5" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 5: Elementos Semânticos e Multimídia</h3>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Ensinar a usar elementos HTML semânticos para uma estrutura mais significativa e a incorporar áudio e vídeo.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores, navegador web, e arquivos de áudio/vídeo pequenos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="htmlSemantico.html">HTML Semântico: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</a></li>
+                        <li><a href="multimidia.html">Multimídia: Elementos <code>&lt;audio&gt;</code> e <code>&lt;video&gt;</code> com o atributo <code>controls</code>.</a></li>
+                        <li><a href="multimidiasExternas.html">Incorporação externa: Uso de <code>&lt;iframe&gt;</code> para vídeos do YouTube.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Criando um "Blog Post" Semântico com Mídia</h4>
+                    <p class="mb-4">Criar um arquivo <code>blog_post.html</code> utilizando toda a estrutura semântica (header, nav, main, article, footer).</p>
+                    <p>Dentro do <code>&lt;article&gt;</code>, incluir texto, uma imagem com <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>, e um vídeo incorporado do YouTube.</p>
+                </div>
+            </div>
+
+            <div id="lesson-6" class="lesson-content space-y-8">
+                <h3 class="text-3xl font-bold text-slate-900 border-b pb-4">Aula 6: Boas Práticas, Validação e Meta Tags</h3>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Detalhes da Aula</h4>
+                    <p><strong>Objetivo:</strong> Reforçar boas práticas, ensinar a validar HTML e explorar meta tags para otimização.</p>
+                    <p><strong>Duração:</strong> 50 minutos</p>
+                    <p><strong>Materiais:</strong> Computadores com acesso à internet para o W3C HTML Validator.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Conteúdo Programático</h4>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li><a href="boasPraticas.html">Boas Práticas: Indentação, comentários, nomenclatura.</a></li>
+                        <li><a href="validacaoW3C.html">Validação HTML: O porquê e como usar o W3C HTML Validator.</a></li>
+                        <li><a href="metaTag.html">Meta Tags para SEO: <code>description</code>.</a></li>
+                        <li><a href="metaTagsRedeSocial.html">Meta Tags para Redes Sociais: Open Graph (<code>og:title</code>, <code>og:description</code>, etc.).</a></li>
+                        <li><a href="favicon.html">Favicon: <code>&lt;link rel="icon" ...&gt;</code>.</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Atividade Prática: Otimizando e Validando uma Página Existente</h4>
+                    <p class="mb-4">Pegar uma página criada anteriormente e aplicar as otimizações:</p>
+                    <ul class="list-disc list-inside space-y-2 text-slate-700">
+                        <li>Revisar e indentar o código.</li>
+                        <li>Adicionar comentários explicativos.</li>
+                        <li>Validar o código no W3C Validator e corrigir todos os erros.</li>
+                        <li>Adicionar uma meta tag de descrição e uma meta tag Open Graph para o título.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const lessonContents = document.querySelectorAll('.lesson-content');
+            const mobileNav = document.getElementById('mobile-nav-select');
+
+            function showLesson(targetId) {
+                lessonContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+
+                const targetLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+
+                if(mobileNav.value !== targetId) {
+                    mobileNav.value = targetId;
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('data-target');
+                    showLesson(targetId);
+                });
+            });
+
+            mobileNav.addEventListener('change', (event) => {
+                showLesson(event.target.value);
+            });
+            
+            showLesson('lesson-1');
+        });
+    </script>
+</body>
+</html>

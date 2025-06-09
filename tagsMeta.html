@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags Essenciais: Charset e Viewport</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .code-inline {
+            background-color: #e2e8f0; /* slate-200 */
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: 'Fira Code', monospace;
+            color: #1e293b; /* slate-800 */
+            font-size: 0.95em;
+        }
+        .code-block {
+            background-color: #1e293b; /* slate-800 */
+            color: #e2e8f0; /* slate-200 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="http://127.0.0.1:5500/pweb/aulasHTML.html">Início</a>
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-12 md:mb-16 section-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Meta Tags Essenciais: Charset e Viewport</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                Descubra a importância das meta tags <span class="code-inline">&lt;meta charset="UTF-8"&gt;</span> e <span class="code-inline">&lt;meta name="viewport" ...&gt;</span> para a correta exibição e responsividade da sua página web.
+            </p>
+        </section>
+
+        <section id="charset" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;meta charset="UTF-8"&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    Esta meta tag é fundamental para a correta renderização do texto na sua página.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> Uma meta tag que define a <strong class="font-semibold text-blue-600">codificação de caracteres</strong> do documento HTML.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> <span class="code-inline">UTF-8</span> é a codificação mais comum e recomendada para a web. Ela garante que todos os caracteres, incluindo acentos, cedilhas e símbolos especiais de diferentes idiomas, sejam exibidos corretamente no navegador, evitando problemas de caracteres ilegíveis ou "quebrados". Sem ela, o navegador pode tentar adivinhar a codificação, levando a erros de exibição.
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;!-- Outras meta tags e links --&gt;
+&lt;/head&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="viewport" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16 section-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center"><span class="code-inline">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-4">
+                    Esta meta tag é a base para garantir que a sua página seja responsiva e se adapte a diferentes tamanhos de ecrã.
+                </p>
+                <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                    <li>
+                        <strong class="font-semibold">O que é:</strong> Uma meta tag que controla as dimensões e o comportamento da área de visualização (viewport) da página web.
+                    </li>
+                    <li>
+                        <strong class="font-semibold">Função:</strong> É essencial para o <strong class="font-semibold text-blue-600">design responsivo</strong> e a experiência do utilizador em diferentes dispositivos (smartphones, tablets, desktops).
+                        <ul class="list-disc list-inside ml-6 mt-2 text-base">
+                            <li><span class="code-inline">width=device-width</span>: Define a largura da área de visualização para ser igual à largura do dispositivo em pixels independentes de dispositivo.</li>
+                            <li><span class="code-inline">initial-scale=1.0</span>: Define o nível de zoom inicial quando a página é carregada pela primeira vez, garantindo que o zoom seja de 100%.</li>
+                        </ul>
+                        Em conjunto, estas propriedades asseguram que a página se ajuste automaticamente à largura do ecrã do utilizador e que o zoom inicial seja neutro, proporcionando uma visualização otimizada em qualquer dispositivo sem que o utilizador precise de fazer zoom manualmente.
+                    </li>
+                </ul>
+                <div class="code-block mt-8">
+                    <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;!-- Título, links CSS, scripts JS, etc. --&gt;
+&lt;/head&gt;
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="text-center py-12 md:py-16 bg-slate-100 rounded-xl shadow-inner section-fade-in">
+            <div class="max-w-3xl mx-auto px-4">
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Estas duas meta tags, embora pequenas, são vitais para a fundamentação de qualquer página web moderna, garantindo a sua compatibilidade e a melhor experiência possível para o utilizador.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade-in');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

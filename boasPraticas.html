@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas Práticas em HTML: Indentação, Comentários e Nomenclatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boas Práticas em HTML: Indentação, Comentários e Nomenclatura</h1>
+        <p>Escrever código HTML não se resume apenas a fazer a página funcionar; é também sobre torná-la legível, fácil de manter e colaborativa. Adotar <strong>boas práticas</strong> de codificação é crucial para alcançar esses objetivos. Nesta página, exploraremos três pilares fundamentais para um código HTML de alta qualidade: <strong>Indentação</strong>, <strong>Comentários</strong> e <strong>Nomenclatura</strong>.</p>
+
+        ---
+
+        <h2>1. Indentação (Indentation)</h2>
+        <p>A indentação refere-se ao uso de espaços ou tabulações para criar recuos no código, visualmente representando a hierarquia e o aninhamento dos elementos HTML. Embora a indentação não afete como o navegador renderiza a página, ela tem um impacto enorme na legibilidade do código.</p>
+
+        <h3>Por que é Importante?</h3>
+        <ul>
+            <li><strong>Legibilidade:</strong> Facilita a visualização da estrutura aninhada dos elementos, tornando o código mais fácil de entender.</li>
+            <li><strong>Manutenção:</strong> Ajuda a identificar rapidamente o início e o fim de tags e a localizar erros de estrutura.</li>
+            <li><strong>Colaboração:</strong> É essencial em projetos de equipe, onde múltiplos desenvolvedores precisam ler e modificar o mesmo código.</li>
+        </ul>
+
+        <h3>Melhores Práticas:</h3>
+        <ul>
+            <li>Use um padrão consistente: 2 ou 4 espaços, ou tabulações. A escolha é pessoal, mas a consistência é chave.</li>
+            <li>Indente os elementos filhos em relação aos seus pais.</li>
+        </ul>
+
+        <div class="code-example">
+            <h3>Exemplo de Indentação Ruim vs. Boa:</h3>
+<pre><code>&lt;!-- Indentação Ruim --&gt;
+&lt;div&gt;
+&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Parágrafo&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Indentação Boa --&gt;
+&lt;div&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;p&gt;Parágrafo&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>2. Comentários (Comments)</h2>
+        <p>Comentários em HTML são trechos de texto que são ignorados pelo navegador durante a renderização da página. Eles servem para documentar o código, explicar partes complexas, deixar notas para outros desenvolvedores (ou para você mesmo no futuro) e desativar temporariamente blocos de código.</p>
+        <p><strong>Sintaxe:</strong> <code>&lt;!-- Seu comentário aqui --&gt;</code></p>
+
+        <h3>Por que é Importante?</h3>
+        <ul>
+            <li><strong>Documentação:</strong> Explica a lógica ou o propósito de um bloco de código, especialmente em seções não óbvias.</li>
+            <li><strong>Manutenção:</strong> Ajuda a relembrar decisões de design ou a identificar áreas que podem precisar de atenção futura.</li>
+            <li><strong>Depuração:</strong> Permite desativar temporariamente partes do código sem excluí-las.</li>
+            <li><strong>Colaboração:</strong> Facilita a compreensão do código por outros membros da equipe.</li>
+        </ul>
+
+        <h3>Melhores Práticas:</h3>
+        <ul>
+            <li>Use comentários para explicar o "porquê" de algo, não apenas o "o quê".</li>
+            <li>Mantenha os comentários concisos e atualizados.</li>
+            <li>Use comentários para dividir seções lógicas do seu documento.</li>
+        </ul>
+
+        <div class="code-example">
+            <h3>Exemplo de Uso de Comentários:</h3>
+<pre><code>&lt;!-- Header da página: Contém o logotipo e menu de navegação principal --&gt;
+&lt;header&gt;
+    &lt;img src="logo.png" alt="Logotipo da Empresa"&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/"&gt;Início&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/produtos"&gt;Produtos&lt;/a&gt;&lt;/li&gt;
+            &lt;!-- Temporariamente desativado: link de contato --&gt;
+            &lt;!-- &lt;li&gt;&lt;a href="/contato"&gt;Contato&lt;/a&gt;&lt;/li&gt; --&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- Seção de Conteúdo Principal: Exibe os artigos mais recentes --&gt;
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Título do Artigo&lt;/h2&gt;
+        &lt;p&gt;Conteúdo do artigo aqui.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>3. Nomenclatura (Naming Conventions)</h2>
+        <p>A nomenclatura refere-se à forma como você nomeia seus atributos <code>id</code>, <code>class</code> e outros identificadores no HTML. Nomes claros, descritivos e consistentes são cruciais para a legibilidade do código e para a colaboração com CSS e JavaScript.</p>
+
+        <h3>Por que é Importante?</h3>
+        <ul>
+            <li><strong>Clareza:</strong> Nomes significativos facilitam a compreensão do propósito de um elemento sem precisar analisar todo o código.</li>
+            <li><strong>Manutenção:</strong> Reduz o tempo gasto procurando elementos específicos e diminui a chance de introduzir erros.</li>
+            <li><strong>Consistência:</strong> Adotar um padrão de nomenclatura em todo o projeto torna o código mais previsível.</li>
+            <li><strong>Colaboração:</strong> Facilita a integração entre HTML, CSS e JavaScript, pois todos os desenvolvedores usam os mesmos identificadores.</li>
+        </ul>
+
+        <h3>Melhores Práticas:</h3>
+        <ul>
+            <li><strong>Descritivos:</strong> Nomes devem indicar claramente a função ou o conteúdo do elemento (ex: <code>&lt;div class="menu-principal"&gt;</code>, não <code>&lt;div class="m1"&gt;</code>).</li>
+            <li><strong>Minúsculas e Hífen (kebab-case):</strong> Use letras minúsculas e hífens para separar palavras (ex: <code>produto-detalhes</code>, <code>contato-formulario</code>). Esta é a convenção mais comum para nomes de classes e IDs em HTML/CSS.</li>
+            <li><strong>Consistência:</strong> Mantenha o mesmo estilo de nomenclatura em todo o seu projeto.</li>
+            <li><strong>Evite abreviações excessivas:</strong> A menos que sejam universalmente reconhecidas (ex: "btn" para "button").</li>
+        </ul>
+
+        <div class="code-example">
+            <h3>Exemplo de Nomenclatura Ruim vs. Boa:</h3>
+<pre><code>&lt;!-- Nomenclatura Ruim --&gt;
+&lt;div id="d1"&gt;
+    &lt;a class="lnk" href="#"&gt;Click Here&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Nomenclatura Boa --&gt;
+&lt;div id="secao-introducao"&gt;
+    &lt;p class="texto-destaque"&gt;Bem-vindo ao nosso site.&lt;/p&gt;
+    &lt;a class="botao-primario" href="/saiba-mais"&gt;Saiba Mais&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+        </div>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>A aplicação de boas práticas de <strong>indentação</strong>, <strong>comentários</strong> e <strong>nomenclatura</strong> é um investimento que compensa enormemente no longo prazo. Um código HTML limpo, organizado e bem documentado não só torna o processo de desenvolvimento mais agradável, mas também garante que seus projetos sejam mais fáceis de manter, depurar e escalar, além de promover uma colaboração eficiente em equipes.</p>
+    </div>
+</body>
+</html>

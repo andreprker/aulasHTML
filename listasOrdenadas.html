@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas Ordenadas: &lt;ol&gt; e &lt;li&gt; em HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: decimal; /* Padrão para <ol>, mas pode ser mudado com CSS */
+            padding-left: 20px;
+        }
+        ol.custom-style {
+            list-style-type: upper-roman; /* Exemplo de estilo com CSS */
+        }
+        ol li, ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-placeholder {
+            background-color: #ccc;
+            color: #666;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listas Ordenadas: <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code> em HTML</h1>
+        <p>Em HTML, as listas são uma ferramenta poderosa para organizar informações de forma estruturada. Além das listas não ordenadas (<code>&lt;ul&gt;</code>), temos as <strong>listas ordenadas</strong>, que são utilizadas quando a sequência ou a numeração dos itens é semanticamente importante. Esta página focará no uso dos elementos <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code> para criar essas listas.</p>
+
+        ---
+
+        <h2>O Elemento <code>&lt;ol&gt;</code> (Ordered List)</h2>
+        <p>O elemento <code>&lt;ol&gt;</code> representa uma lista de itens em que a ordem dos itens é significativa. Por padrão, os navegadores exibirão os itens de uma lista ordenada com numeração decimal (1, 2, 3...).</p>
+        <p>A tag de abertura <code>&lt;ol&gt;</code> e a tag de fechamento <code>&lt;/ol&gt;</code> delimitam toda a lista.</p>
+
+        <h3>Atributos Comuns de <code>&lt;ol&gt;</code>:</h3>
+        <ul>
+            <li><strong><code>start</code>:</strong> Define o valor inicial da contagem da lista. Útil quando você quer que a lista comece de um número diferente de 1.
+                <div class="code-example">
+<pre><code>&lt;ol start="5"&gt;
+    &lt;li&gt;Item 5&lt;/li&gt;
+    &lt;li&gt;Item 6&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+                </div>
+            </li>
+            <li><strong><code>reversed</code>:</strong> Faz com que a lista seja numerada em ordem decrescente (do maior para o menor).
+                <div class="code-example">
+<pre><code>&lt;ol reversed&gt;
+    &lt;li&gt;Último item&lt;/li&gt;
+    &lt;li&gt;Item do meio&lt;/li&gt;
+    &lt;li&gt;Primeiro item&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+                </div>
+            </li>
+        </ul>
+
+        ---
+
+        <h2>O Elemento <code>&lt;li&gt;</code> (List Item)</h2>
+        <p>Assim como nas listas não ordenadas, o elemento <code>&lt;li&gt;</code> representa um item individual dentro de uma lista. Cada item que você deseja incluir na sua lista ordenada deve ser envolvido por uma tag <code>&lt;li&gt;</code> de abertura e uma tag <code>&lt;/li&gt;</code> de fechamento.</p>
+        <p>O elemento <code>&lt;li&gt;</code> deve ser um filho direto de um <code>&lt;ol&gt;</code> ou <code>&lt;ul&gt;</code>.</p>
+
+        ---
+
+        <h2>Exemplo Prático de Lista Ordenada</h2>
+        <p>Vamos criar uma lista de passos para uma receita:</p>
+
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Receita de Bolo de Chocolate&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Pré-aqueça o forno a 180°C.&lt;/li&gt;
+    &lt;li&gt;Em uma tigela, misture a farinha, o açúcar, o cacau em pó e o fermento.&lt;/li&gt;
+    &lt;li&gt;Adicione os ovos, o leite e o óleo, misturando até obter uma massa homogênea.&lt;/li&gt;
+    &lt;li&gt;Despeje a massa em uma forma untada e enfarinhada.&lt;/li&gt;
+    &lt;li&gt;Asse por aproximadamente 30-35 minutos, ou até que um palito saia limpo.&lt;/li&gt;
+    &lt;li&gt;Deixe esfriar antes de servir.&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Receita de Bolo de Chocolate</h2>
+        <ol>
+            <li>Pré-aqueça o forno a 180°C.</li>
+            <li>Em uma tigela, misture a farinha, o açúcar, o cacau em pó e o fermento.</li>
+            <li>Adicione os ovos, o leite e o óleo, misturando até obter uma massa homogênea.</li>
+            <li>Despeje a massa em uma forma untada e enfarinhada.</li>
+            <li>Asse por aproximadamente 30-35 minutos, ou até que um palito saia limpo.</li>
+            <li>Deixe esfriar antes de servir.</li>
+        </ol>
+
+        ---
+
+        <h2>Estilizando Listas Ordenadas com CSS</h2>
+        <p>Você pode alterar o estilo dos marcadores de numeração das listas ordenadas usando a propriedade CSS <code>list-style-type</code>. Isso permite escolher entre diferentes tipos de marcadores (numéricos, alfabéticos, romanos, etc.).</p>
+
+        <div class="code-example">
+            <h3>Exemplo de Estilização CSS:</h3>
+<pre><code>&lt;h2&gt;Melhores Filmes (Estilo Personalizado)&lt;/h2&gt;
+&lt;ol class="custom-style"&gt;
+    &lt;li&gt;O Poderoso Chefão&lt;/li&gt;
+    &lt;li&gt;Um Sonho de Liberdade&lt;/li&gt;
+    &lt;li&gt;A Origem&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- No CSS (dentro da tag &lt;style&gt; ou em um arquivo .css): --&gt;
+&lt;style&gt;
+    .custom-style {
+        list-style-type: upper-roman; /* I, II, III... */
+        color: #8B4513; /* Cor do texto e dos marcadores */
+    }
+&lt;/style&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização (com o CSS acima aplicado):</h3>
+        <h2>Melhores Filmes (Estilo Personalizado)</h2>
+        <ol class="custom-style">
+            <li>O Poderoso Chefão</li>
+            <li>Um Sonho de Liberdade</li>
+            <li>A Origem</li>
+        </ol>
+
+        ---
+
+        <h2>Listas Aninhadas</h2>
+        <p>É possível aninhar listas ordenadas dentro de outras listas (ordenadas ou não ordenadas), criando hierarquias mais complexas de informações.</p>
+
+        <div class="code-example">
+            <h3>Exemplo de Lista Aninhada:</h3>
+<pre><code>&lt;h2&gt;Estrutura de Projeto&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Fase de Planejamento
+        &lt;ul&gt; &lt;!-- Lista não ordenada aninhada --&gt;
+            &lt;li&gt;Definição de Requisitos&lt;/li&gt;
+            &lt;li&gt;Análise de Viabilidade&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Fase de Desenvolvimento
+        &lt;ol&gt; &lt;!-- Lista ordenada aninhada --&gt;
+            &lt;li&gt;Codificação&lt;/li&gt;
+            &lt;li&gt;Testes Unitários&lt;/li&gt;
+            &lt;li&gt;Integração&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Fase de Implantação
+        &lt;ul&gt;
+            &lt;li&gt;Configuração de Servidores&lt;/li&gt;
+            &lt;li&gt;Monitoramento Inicial&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Estrutura de Projeto</h2>
+        <ol>
+            <li>Fase de Planejamento
+                <ul>
+                    <li>Definição de Requisitos</li>
+                    <li>Análise de Viabilidade</li>
+                </ul>
+            </li>
+            <li>Fase de Desenvolvimento
+                <ol>
+                    <li>Codificação</li>
+                    <li>Testes Unitários</li>
+                    <li>Integração</li>
+                </ol>
+            </li>
+            <li>Fase de Implantação
+                <ul>
+                    <li>Configuração de Servidores</li>
+                    <li>Monitoramento Inicial</li>
+                </ul>
+            </li>
+        </ol>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>O uso dos elementos <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code> é crucial para apresentar informações em uma sequência lógica em suas páginas web. Eles não só melhoram a legibilidade para os usuários, mas também conferem um significado semântico importante para o conteúdo. Com a flexibilidade dos atributos HTML e a capacidade de personalização do CSS, você pode criar listas ordenadas que se encaixam perfeitamente nas suas necessidades de design e estrutura.</p>
+    </div>
+</body>
+</html>

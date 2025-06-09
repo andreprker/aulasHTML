@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesclagem de Células: colspan e rowspan em HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Para remover o espaçamento entre as bordas das células */
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center; /* Centraliza o texto nas células para melhor visualização dos exemplos */
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        thead {
+            background-color: #e0e0e0;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mesclagem de Células em Tabelas HTML: <code>colspan</code> e <code>rowspan</code></h1>
+        <p>As tabelas HTML são poderosas para organizar dados, mas às vezes a estrutura padrão de linhas e colunas não é suficiente para representar informações complexas. É aí que entram os atributos <strong><code>colspan</code></strong> e <strong><code>rowspan</code></strong>, que permitem mesclar células horizontalmente e verticalmente, respectivamente, criando layouts de tabela mais flexíveis e visualmente informativos.</p>
+
+        ---
+
+        <h2><code>colspan</code>: Mesclagem Horizontal de Células</h2>
+        <p>O atributo <code>colspan</code> é usado em uma célula (<code>&lt;th&gt;</code> ou <code>&lt;td&gt;</code>) para fazer com que ela ocupe o espaço de múltiplas colunas. O valor de <code>colspan</code> indica quantas colunas a célula deve "estender" ou "mesclar".</p>
+        <p><strong>Sintaxe:</strong> <code>&lt;th colspan="número"&gt;</code> ou <code>&lt;td colspan="número"&gt;</code></p>
+        <div class="code-example">
+            <h3>Exemplo de <code>colspan</code>: Título de Seção</h3>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th colspan="3"&gt;Dados de Vendas Mensais&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Mês&lt;/th&gt;
+            &lt;th&gt;Produtos&lt;/th&gt;
+            &lt;th&gt;Serviços&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Janeiro&lt;/td&gt;
+            &lt;td&gt;1500&lt;/td&gt;
+            &lt;td&gt;800&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+        <h3>Visualização:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Dados de Vendas Mensais</th>
+                </tr>
+                <tr>
+                    <th>Mês</th>
+                    <th>Produtos</th>
+                    <th>Serviços</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Janeiro</td>
+                    <td>1500</td>
+                    <td>800</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>No exemplo acima, a célula "Dados de Vendas Mensais" ocupa o espaço de 3 colunas, centrando o título sobre os dados.</p>
+
+        ---
+
+        <h2><code>rowspan</code>: Mesclagem Vertical de Células</h2>
+        <p>O atributo <code>rowspan</code> é usado em uma célula (<code>&lt;th&gt;</code> ou <code>&lt;td&gt;</code>) para fazer com que ela ocupe o espaço de múltiplas linhas. O valor de <code>rowspan</code> indica quantas linhas a célula deve "estender" ou "mesclar".</p>
+        <p><strong>Sintaxe:</strong> <code>&lt;th rowspan="número"&gt;</code> ou <code>&lt;td rowspan="número"&gt;</code></p>
+        <div class="code-example">
+            <h3>Exemplo de <code>rowspan</code>: Categoria que Abrange Múltiplos Itens</h3>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Categoria&lt;/th&gt;
+            &lt;th&gt;Item&lt;/th&gt;
+            &lt;th&gt;Quantidade&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;Eletrônicos&lt;/td&gt;
+            &lt;td&gt;Teclado&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;120&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Livros&lt;/td&gt;
+            &lt;td&gt;Romance&lt;/td&gt;
+            &lt;td&gt;200&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+        <h3>Visualização:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Item</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Eletrônicos</td>
+                    <td>Teclado</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>Livros</td>
+                    <td>Romance</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Neste exemplo, a célula "Eletrônicos" se estende por duas linhas, agrupando o teclado e o mouse sob a mesma categoria.</p>
+
+        ---
+
+        <h2>Exemplo Combinado: <code>colspan</code> e <code>rowspan</code> Juntos</h2>
+        <p>É comum usar ambos os atributos para criar tabelas mais complexas e eficientes na apresentação de dados.</p>
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Horário de Aulas - Turma A&lt;/h2&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt;Dia&lt;/th&gt;
+            &lt;th colspan="2"&gt;Manhã&lt;/th&gt;
+            &lt;th colspan="2"&gt;Tarde&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;8:00 - 10:00&lt;/th&gt;
+            &lt;th&gt;10:00 - 12:00&lt;/th&gt;
+            &lt;th&gt;14:00 - 16:00&lt;/th&gt;
+            &lt;th&gt;16:00 - 18:00&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Segunda-feira&lt;/td&gt;
+            &lt;td&gt;Matemática&lt;/td&gt;
+            &lt;td&gt;Português&lt;/td&gt;
+            &lt;td&gt;História&lt;/td&gt;
+            &lt;td&gt;Geografia&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Terça-feira&lt;/td&gt;
+            &lt;td&gt;Ciências&lt;/td&gt;
+            &lt;td colspan="3"&gt;Laboratório de Química&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Quarta-feira&lt;/td&gt;
+            &lt;td colspan="4"&gt;Projeto Interdisciplinar&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt>
+&lt;/table&gt;
+</code></pre>
+        </div>
+        <h3>Visualização:</h3>
+        <h2>Horário de Aulas - Turma A</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Dia</th>
+                    <th colspan="2">Manhã</th>
+                    <th colspan="2">Tarde</th>
+                </tr>
+                <tr>
+                    <th>8:00 - 10:00</th>
+                    <th>10:00 - 12:00</th>
+                    <th>14:00 - 16:00</th>
+                    <th>16:00 - 18:00</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>Matemática</td>
+                    <td>Português</td>
+                    <td>História</td>
+                    <td>Geografia</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>Ciências</td>
+                    <td colspan="3">Laboratório de Química</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td colspan="4">Projeto Interdisciplinar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Considerações Importantes</h2>
+        <ul>
+            <li><strong>Planejamento:</strong> Antes de usar <code>colspan</code> e <code>rowspan</code>, planeje cuidadosamente a estrutura da sua tabela em um rascunho para determinar onde as células precisarão ser mescladas.</li>
+            <li><strong>Número de Células:</strong> Ao usar <code>colspan</code> ou <code>rowspan</code>, lembre-se de que a célula que mescla "ocupa o lugar" de outras células. Você deve ajustar o número de células nas linhas (para <code>colspan</code>) ou colunas (para <code>rowspan</code>) afetadas para que a tabela continue coerente.</li>
+            <li><strong>Acessibilidade:</strong> Tabelas complexas com muitas células mescladas podem ser um desafio para usuários de leitores de tela. Sempre que possível, utilize cabeçalhos de coluna (<code>&lt;th&gt;</code>) e o atributo <code>scope</code> (<code>scope="col"</code> ou <code>scope="row"</code>) para ajudar a fornecer contexto.</li>
+            <li><strong>Design Responsivo:</strong> Tabelas com muitas colunas ou células mescladas podem ser difíceis de visualizar em telas pequenas. Considere estratégias de design responsivo (com CSS) para garantir que suas tabelas sejam legíveis em todos os dispositivos.</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>Os atributos <code>colspan</code> e <code>rowspan</code> são ferramentas poderosas para criar tabelas HTML que vão além da estrutura básica de grade. Eles permitem a representação visual de relacionamentos de dados mais complexos, tornando suas tabelas mais informativas e fáceis de entender. Com um bom planejamento e atenção à acessibilidade, você pode utilizar esses atributos para aprimorar significativamente a apresentação de dados em suas páginas web.</p>
+    </div>
+</body>
+</html>

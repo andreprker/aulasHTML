@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs Variados em Formulários HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="email"],
+        form input[type="number"],
+        form input[type="date"],
+        form textarea {
+            width: calc(100% - 22px); /* Considerando padding e borda */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="checkbox"],
+        form input[type="radio"] {
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        form button[type="reset"] {
+            background-color: #dc3545;
+        }
+        form button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inputs Variados em Formulários HTML</h1>
+        <p>O elemento <code>&lt;input&gt;</code> é um dos mais versáteis em HTML para a criação de formulários. Ele permite que os usuários interajam com a página, fornecendo dados de diversas formas. A principal característica que define o tipo de interação e o formato de dados esperados é o atributo <code>type</code>. Vamos explorar os tipos mais comuns de <code>&lt;input&gt;</code>.</p>
+
+        ---
+
+        <h2>Tipos Comuns de <code>&lt;input&gt;</code></h2>
+
+        <h3><code>type="text"</code>: Campo de Texto Simples</h3>
+        <p>Usado para entrada de texto de uma única linha. É o tipo de input mais básico e comum.</p>
+        <div class="code-example">
+<pre><code>&lt;label for="nome"&gt;Nome:&lt;/label&gt;
+&lt;input type="text" id="nome" name="nome_usuario"&gt;
+</code></pre>
+        </div>
+        <form>
+            <label for="ex_text_nome">Nome:</label>
+            <input type="text" id="ex_text_nome" name="ex_text_nome">
+        </form>
+
+        <h3><code>type="password"</code>: Campo de Senha</h3>
+        <p>Similar ao <code>text</code>, mas os caracteres digitados são ocultados (geralmente com asteriscos ou pontos) para privacidade.</p>
+        <div class="code-example">
+<pre><code>&lt;label for="senha"&gt;Senha:&lt;/label&gt;
+&lt;input type="password" id="senha" name="senha_usuario"&gt;
+</code></pre>
+        </div>
+        <form>
+            <label for="ex_password_senha">Senha:</label>
+            <input type="password" id="ex_password_senha" name="ex_password_senha">
+        </form>
+
+        <h3><code>type="email"</code>: Campo de Email</h3>
+        <p>Projetado para endereços de email. Navegadores modernos podem fornecer validação automática básica do formato do email e teclados otimizados em dispositivos móveis.</p>
+        <div class="code-example">
+<pre><code>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email_usuario"&gt;
+</code></pre>
+        </div>
+        <form>
+            <label for="ex_email_email">Email:</label>
+            <input type="email" id="ex_email_email" name="ex_email_email">
+        </form>
+
+        <h3><code>type="number"</code>: Campo Numérico</h3>
+        <p>Usado para entrada de números. Navegadores podem exibir controles de incremento/decremento (spinners) e teclados numéricos em dispositivos móveis. Permite atributos como <code>min</code>, <code>max</code> e <code>step</code>.</p>
+        <div class="code-example">
+<pre><code>&lt;label for="quantidade"&gt;Quantidade:&lt;/label&gt;
+&lt;input type="number" id="quantidade" name="qtd" min="1" max="10" step="1"&gt;
+</code></pre>
+        </div>
+        <form>
+            <label for="ex_number_quantidade">Quantidade (1-10):</label>
+            <input type="number" id="ex_number_quantidade" name="ex_number_quantidade" min="1" max="10" value="1">
+        </form>
+
+        <h3><code>type="date"</code>: Campo de Data</h3>
+        <p>Permite a seleção de uma data. Navegadores geralmente fornecem um seletor de calendário (date picker) para facilitar a entrada.</p>
+        <div class="code-example">
+<pre><code>&lt;label for="data_nascimento"&gt;Data de Nascimento:&lt;/label&gt;
+&lt;input type="date" id="data_nascimento" name="data_nasc"&gt;
+</code></pre>
+        </div>
+        <form>
+            <label for="ex_date_nascimento">Data de Nascimento:</label>
+            <input type="date" id="ex_date_nascimento" name="ex_date_nascimento">
+        </form>
+
+        <h3><code>type="checkbox"</code>: Caixa de Seleção</h3>
+        <p>Usado para permitir que o usuário selecione uma ou mais opções de um conjunto. Cada checkbox é um item independente.</p>
+        <div class="code-example">
+<pre><code>&lt;input type="checkbox" id="aceitar_termos" name="termos" value="sim"&gt;
+&lt;label for="aceitar_termos"&gt;Aceito os termos e condições&lt;/label&gt;&lt;br&gt;
+
+&lt;input type="checkbox" id="receber_noticias" name="noticias" value="sim" checked&gt;
+&lt;label for="receber_noticias"&gt;Desejo receber notícias&lt;/label&gt;
+</code></pre>
+        </div>
+        <form>
+            <input type="checkbox" id="ex_checkbox_termos" name="ex_checkbox_termos" value="sim">
+            <label for="ex_checkbox_termos">Aceito os termos e condições</label><br>
+            <input type="checkbox" id="ex_checkbox_noticias" name="ex_checkbox_noticias" value="sim" checked>
+            <label for="ex_checkbox_noticias">Desejo receber notícias</label>
+        </form>
+
+        <h3><code>type="radio"</code>: Botão de Rádio</h3>
+        <p>Usado para permitir que o usuário selecione apenas uma opção de um grupo. Vários botões de rádio no mesmo grupo devem ter o mesmo atributo <code>name</code>.</p>
+        <div class="code-example">
+<pre><code>&lt;p&gt;Selecione seu gênero:&lt;/p&gt;
+&lt;input type="radio" id="genero_masc" name="genero" value="masculino"&gt;
+&lt;label for="genero_masc"&gt;Masculino&lt;/label&gt;&lt;br&gt;
+&lt;input type="radio" id="genero_fem" name="genero" value="feminino"&gt;
+&lt;label for="genero_fem"&gt;Feminino&lt;/label&gt;
+</code></pre>
+        </div>
+        <form>
+            <p>Selecione seu gênero:</p>
+            <div class="radio-group">
+                <input type="radio" id="ex_radio_masc" name="ex_radio_genero" value="masculino">
+                <label for="ex_radio_masc">Masculino</label>
+                <input type="radio" id="ex_radio_fem" name="ex_radio_genero" value="feminino">
+                <label for="ex_radio_fem">Feminino</label>
+            </div>
+        </form>
+
+        <h3><code>type="submit"</code>: Botão de Envio</h3>
+        <p>Cria um botão que, quando clicado, envia os dados do formulário para o URL especificado no atributo <code>action</code> do <code>&lt;form&gt;</code>.</p>
+        <div class="code-example">
+<pre><code>&lt;button type="submit"&gt;Enviar Formulário&lt;/button&gt;
+</code></pre>
+        </div>
+        <form>
+            <button type="submit">Enviar Formulário</button>
+        </form>
+
+        <h3><code>type="reset"</code>: Botão de Reset</h3>
+        <p>Cria um botão que, quando clicado, redefine todos os campos do formulário para seus valores iniciais.</p>
+        <div class="code-example">
+<pre><code>&lt;button type="reset"&gt;Limpar Formulário&lt;/button&gt;
+</code></pre>
+        </div>
+        <form>
+            <button type="reset">Limpar Formulário</button>
+        </form>
+
+        ---
+
+        <h2>Exemplo Completo com Diversos Tipos de Input</h2>
+        <p>Este formulário demonstra a utilização de vários tipos de <code>&lt;input&gt;</code> em conjunto:</p>
+        <div class="code-example">
+            <h3>Código HTML:</h3>
+<pre><code>&lt;h2&gt;Formulário de Inscrição&lt;/h2&gt;
+&lt;form action="/processar_inscricao.php" method="POST"&gt;
+    &lt;label for="nome_completo"&gt;Nome Completo:&lt;/label&gt;
+    &lt;input type="text" id="nome_completo" name="nome" required&gt;
+
+    &lt;label for="email_inscricao"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email_inscricao" name="email" required&gt;
+
+    &lt;label for="senha_nova"&gt;Criar Senha:&lt;/label&gt;
+    &lt;input type="password" id="senha_nova" name="senha" required&gt;
+
+    &lt;label for="idade_usuario"&gt;Idade:&lt;/label&gt;
+    &lt;input type="number" id="idade_usuario" name="idade" min="18" max="99" required&gt;
+
+    &lt;label for="data_evento"&gt;Data Preferida para Evento:&lt;/label&gt;
+    &lt;input type="date" id="data_evento" name="data_evento"&gt;
+
+    &lt;p&gt;&lt;strong&gt;Interesses:&lt;/strong&gt;&lt;/p&gt;
+    &lt;input type="checkbox" id="dev_web" name="interesses" value="web"&gt;
+    &lt;label for="dev_web"&gt;Desenvolvimento Web&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" id="dev_mobile" name="interesses" value="mobile"&gt;
+    &lt;label for="dev_mobile"&gt;Desenvolvimento Mobile&lt;/label&gt;&lt;br&gt;
+    &lt;input type="checkbox" id="ia" name="interesses" value="ia"&gt;
+    &lt;label for="ia"&gt;Inteligência Artificial&lt;/label&gt;&lt;br&gt;
+
+    &lt;p&gt;&lt;strong&gt;Nível de Experiência:&lt;/strong&gt;&lt;/p&gt;
+    &lt;div class="radio-group"&gt;
+        &lt;input type="radio" id="junior" name="nivel_experiencia" value="junior"&gt;
+        &lt;label for="junior"&gt;Júnior&lt;/label&gt;
+        &lt;input type="radio" id="pleno" name="nivel_experiencia" value="pleno"&gt;
+        &lt;label for="pleno"&gt;Pleno&lt;/label&gt;
+        &lt;input type="radio" id="senior" name="nivel_experiencia" value="senior"&gt;
+        &lt;label for="senior"&gt;Sênior&lt;/label&gt;
+    &lt;/div&gt;
+
+    &lt;label for="comentarios"&gt;Comentários Adicionais:&lt;/label&gt;
+    &lt;textarea id="comentarios" name="comentarios" rows="4"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Inscrever-se&lt;/button&gt;
+    &lt;button type="reset"&gt;Limpar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+
+        <h3>Visualização:</h3>
+        <h2>Formulário de Inscrição</h2>
+        <form action="/processar_inscricao.php" method="POST">
+            <label for="nome_completo">Nome Completo:</label>
+            <input type="text" id="nome_completo" name="nome" required>
+
+            <label for="email_inscricao">Email:</label>
+            <input type="email" id="email_inscricao" name="email" required>
+
+            <label for="senha_nova">Criar Senha:</label>
+            <input type="password" id="senha_nova" name="senha" required>
+
+            <label for="idade_usuario">Idade:</label>
+            <input type="number" id="idade_usuario" name="idade" min="18" max="99" required>
+
+            <label for="data_evento">Data Preferida para Evento:</label>
+            <input type="date" id="data_evento" name="data_evento">
+
+            <p><strong>Interesses:</strong></p>
+            <input type="checkbox" id="dev_web" name="interesses" value="web">
+            <label for="dev_web">Desenvolvimento Web</label><br>
+            <input type="checkbox" id="dev_mobile" name="interesses" value="mobile">
+            <label for="dev_mobile">Desenvolvimento Mobile</label><br>
+            <input type="checkbox" id="ia" name="interesses" value="ia">
+            <label for="ia">Inteligência Artificial</label><br>
+
+            <p><strong>Nível de Experiência:</strong></p>
+            <div class="radio-group">
+                <input type="radio" id="junior" name="nivel_experiencia" value="junior">
+                <label for="junior">Júnior</label>
+                <input type="radio" id="pleno" name="nivel_experiencia" value="pleno">
+                <label for="pleno">Pleno</label>
+                <input type="radio" id="senior" name="nivel_experiencia" value="senior">
+                <label for="senior">Sênior</label>
+            </div>
+
+            <label for="comentarios">Comentários Adicionais:</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+            <button type="submit">Inscrever-se</button>
+            <button type="reset">Limpar</button>
+        </form>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>A diversidade de tipos de <code>&lt;input&gt;</code> oferece flexibilidade enorme para criar formulários que se adaptam a praticamente qualquer necessidade de coleta de dados. Usar o tipo correto de <code>&lt;input&gt;</code> não só melhora a experiência do usuário (UX) com validações e interfaces otimizadas, mas também contribui para a semântica e acessibilidade da sua página web.</p>
+    </div>
+</body>
+</html>
